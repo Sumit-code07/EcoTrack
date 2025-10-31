@@ -1,97 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home Page</title>
-  <style>
-    /* Reset default spacing */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f9f9f9;
-    }
-
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 40px;
-      background-color: #ffffff;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    /* Logo */
-    .logo img {
-      height: 50px;
-      width: auto;
-    }
-
-    /* Right-side options */
-    .header-right {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .header-right a {
-      text-decoration: none;
-      color: #333;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
-
-    .header-right a:hover {
-      color: #007bff;
-    }
-
-    /* Language dropdown */
-    select {
-      border: none;
-      background: transparent;
-      font-size: 15px;
-      cursor: pointer;
-      color: #333;
-    }
-
-    select:focus {
-      outline: none;
-    }
-
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/home.css">
 </head>
 <body>
-
-  <!-- HEADER SECTION -->
-  <header>
-    <div class="logo">
-      <img src="logo.png" alt="Company Logo"> <!-- replace with your logo -->
+    <div class="mountain-bg">
+        <div class="mountain-layer-1"></div>
+        <div class="mountain-layer-2"></div>
+        <div class="mountain-layer-3"></div>
     </div>
 
-    <div class="header-right">
-      <a href="mailto:info@example.com">📧 info@example.com</a>
-      <a href="tel:+911234567890">📞 Contact</a>
-      <select>
-        <option>English</option>
-        <option>Hindi</option>
-        <option>French</option>
-      </select>
+    <div class="auth-container">
+        <div class="logo">
+            <img src="/a.png" alt="ECO TRACK Logo" style="width: 150px; height: auto; margin-bottom: 20px;">
+            <h1>Eco<span>Track</span></h1>
+        </div>
+        
+        <h1 class="slogan">Every Action Counts.<br>Track Yours Today.</h1>
+        
+        <div class="button-group">
+            <a href="#" class="auth-button signup">Sign Up</a>
+            <a href="#" class="auth-button signin">Log In</a>
+        </div>
     </div>
-  </header>
-
-  <!-- MAIN CONTENT -->
-  <main style="padding: 40px; text-align:center;">
-    <h1>Welcome to Our Website</h1>
-    <p>Explore our content and services.</p>
-  </main>
-
 </body>
 </html>
