@@ -1,3 +1,104 @@
-h1{
-    color:pink;
+*{
+    padding: 0;
+    margin: 0;
 }
+body{
+    font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+}
+header{
+    height: 97px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+    background-color: rgb(112, 222, 185);
+}
+.logo{
+    position: relative;
+    left:10px;
+    top: 27px;
+}
+.profile{
+    border:1px solid black;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    position: relative;
+    right: 10px;
+    top:20px;
+}
+.nav{
+    width: 483PX;
+    height: 50px;
+    position: absolute;
+    top: 36px;
+    right: 100px;
+}
+.nav ul{
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.table-container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      width: 90%;
+      max-width: 700px;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #333;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    thead {
+      background-color: #0077b6;
+      color: #fff;
+    }
+
+    th, td {
+      padding: 14px;
+      text-align: center;
+      font-size: 15px;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: #f1f5f9;
+    }
+
+    tbody tr:hover {
+      background-color: #e0f7fa;
+      transition: 0.3s ease;
+    }
+
+    td {
+      color: #333;
+    }
+
+    .total-row {
+      background-color: #caf0f8;
+      font-weight: 600;
+    }
+    .table-container{
+        margin:10px auto;
+    }
+
+    .btn-co2{
+        height: 58px;
+        width: 192px;
+    }
