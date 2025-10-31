@@ -1,12 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/signUp.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ECO TRACK | Signup</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background: linear-gradient(135deg, #d7f8d7, #a8e6a3);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    .signup-container {
+      width: 400px;
+      margin: 100px auto;
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      padding: 40px;
+      text-align: center;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    /* Logo + Text Animation */
+    .logo-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 30px;
+      opacity: 0;
+      transform: translateY(-30px);
+      animation: slideIn 1.2s ease forwards;
+    }
+    .logo-row img {
+      width: 80px;
+      height: 80px;
+      margin-right: 10px;
+    }
+    .logo-row h1 {
+      color: #2d6a4f;
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    @keyframes slideIn {
+      0% {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      text-align: left;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s ease forwards;
+      animation-delay: 0.6s;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      color: #2d6a4f;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      border: 1.5px solid #b7d3b0;
+      border-radius: 8px;
+      outline: none;
+      background-color: #f8fff8;
+      transition: 0.3s;
+    }
+
+    input:focus {
+      border-color: #2d6a4f;
+      box-shadow: 0 0 8px rgba(45,106,79,0.3);
+    }
+
+    .signup-btn {
+      width: 100%;
+      padding: 12px;
+      background-color: #2d6a4f;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 600;
+      transition: 0.3s;
+      opacity: 0;
+      animation: fadeInUp 1s ease forwards;
+      animation-delay: 0.8s;
+    }
+
+    .signup-btn:hover {
+      background-color: #1b4332;
+      transform: translateY(-1px);
+    }
+
+    .login-link {
+      margin-top: 18px;
+      color: #355f3a;
+      opacity: 0;
+      animation: fadeInUp 1s ease forwards;
+      animation-delay: 1s;
+    }
+
+    .login-link a {
+      color: #2d6a4f;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .login-link a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      color: #2d6a4f;
+      margin-top: 30px;
+      font-size: 14px;
+      opacity: 0;
+      animation: fadeInUp 1s ease forwards;
+      animation-delay: 1.2s;
+    }
+  </style>
 </head>
 <body>
-    <h1>SignUp page</h1>
+  <div class="signup-container">
+    <div class="logo-row">
+      <img src="a.png" alt="ECO TRACK Logo">
+      <h1>ECO TRACK</h1>
+    </div>
+    <form id="signupForm">
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" placeholder="Enter your full name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" placeholder="Enter your phone number" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Create a password" required>
+      </div>
+      <button type="submit" class="signup-btn">Sign Up</button>
+      <div class="login-link">
+        <p>Already part of our mission? <a href="#">Login here</a></p>
+      </div>
+    </form>
+  </div>
+
+  <footer>
+    🌱 Together, we can reduce carbon footprints and build a sustainable future.
+  </footer>
+
+  <script>
+    const form = document.getElementById('signupForm');
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      alert('Thank you for joining ECO TRACK! 🌿');
+    });
+  </script>
 </body>
 </html>
