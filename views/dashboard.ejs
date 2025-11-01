@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <header>
@@ -35,17 +36,51 @@
         <%for(data of datas){%>
             <tr><td><%=data.date%></td><td><%=data.totalCO2%></td></tr>
         <%}%>
-        
-        <!-- <tr><td>26 Oct 2025</td><td>3.1</td></tr>
-        <tr><td>27 Oct 2025</td><td>1.8</td></tr>
-        <tr><td>28 Oct 2025</td><td>2.7</td></tr>
-        <tr><td>29 Oct 2025</td><td>2.9</td></tr>
-        <tr><td>30 Oct 2025</td><td>3.3</td></tr>
-        <tr><td>31 Oct 2025</td><td>2.2</td></tr> -->
       </tbody>
       
     </table>
   </div>
+  <div class="chart-container" style="width:80%; margin:40px auto;">
+    <h3 style="text-align:center;">CO₂ Emission Trend</h3>
+    <canvas id="co2Chart" style="width:100%; height:400px;"></canvas>
+  </div>
+
+  <div style="text-align:center;">
+    <a href="/vehicles/<%= user.id %>">Calculate CO₂ Emission</a>
+  </div>
+
+  <script>
+    // Convert EJS data to JS arrays
+    const dates = JSON.parse('<%- JSON.stringify(datas.map(d => new Date(d.date).toLocaleDateString("en-IN"))) %>');
+    const emissions = JSON.parse('<%- JSON.stringify(datas.map(d => d.totalCO2)) %>');
+  
+  console.log("📅 Dates from server:", dates);
+  console.log("💨 Emissions from server:", emissions);
+
+    const ctx = document.getElementById('co2Chart').getContext('2d');
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: dates,
+        datasets: [{
+          label: 'CO₂ Emission (kg)',
+          data: emissions,
+          borderColor: '#0078d7',
+          backgroundColor: 'rgba(0,120,215,0.2)',
+          borderWidth: 2,
+          fill: true,
+          tension: 0.3
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  </script>
   <div>
         <a href="/vehicles/<%=user.id%>">Calculate CO₂ Emission<a>
       </div>
