@@ -12,19 +12,19 @@
       <img src="/image/a.png" alt="ECO TRACK Logo">
       <h1>ECO TRACK</h1>
     </div>
-    <form id="loginForm">
+    <form id="loginForm" method="post" action="/login">
       <div class="form-group">
-        <label for="username">Username</label>
-        <input type="text" id="username" placeholder="Enter your username" required>
+        <label for="username" >Username</label>
+        <input type="text" id="username" placeholder="Enter your username" name="name" required>
       </div>
       <div class="form-group">
         <label for="password">Password</label>
-        <input type="password" id="password" placeholder="Enter your password" required>
+        <input type="password" id="password" placeholder="Enter your password" name="password" required>
       </div>
       <div class="forgot-password">
         <a href="#">Forgot Password?</a>
       </div>
-      <button type="submit" class="login-btn">Login</button>
+      <button type="submit" class="login-btn" onclick="window.location.href='http://localhost:8080/dashboard'">Login</button>
       <div class="signup-link">
         <p>New here? <a href="#">Create an account</a></p>
       </div>
@@ -35,12 +35,12 @@
     🌿 Tracking today for a cleaner tomorrow — ECO TRACK.
   </footer>
 
-  <script>
+  <!-- <script>
     const form = document.getElementById('loginForm');
     form.addEventListener('submit', function(event) {
       event.preventDefault();
       alert('Welcome back to ECO TRACK! 🌱');
-    });
+    }); -->
   </script>
 </body>
 </html>

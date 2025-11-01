@@ -13,7 +13,7 @@ header{
     flex-direction: row;
     justify-content: space-between;
     position: relative;
-    background-color: rgb(112, 222, 185);
+    background-color: rgb(199, 215, 234);
 }
 .logo{
     position: relative;
@@ -21,7 +21,6 @@ header{
     top: 27px;
 }
 .profile{
-    border:1px solid black;
     height: 50px;
     width: 50px;
     border-radius: 50%;
@@ -101,4 +100,7 @@ header{
     .btn-co2{
         height: 58px;
         width: 192px;
+        border-radius: 22px;
+        position: relative;
+        left: 217px;
     }

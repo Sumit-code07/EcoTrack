@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vehicle Carbon Footprint Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+      max-width: 500px;
+      margin: 40px auto;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+    label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+    select, input, button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 1em;
+    }
+    button {
+      background-color: #0078d7;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover { background-color: #005fa3; }
+  </style>
+</head>
+<body>
+
+  <h2>Vehicle Carbon Footprint Calculator</h2>
+
+  <form action="/vehicles/<%=id%>" method="POST">
+    <label for="vehicleType">Select Vehicle Type:</label>
+    <select id="vehicleType" name="vehicleType" onchange="updateFuelOptions()" required>
+      <option value="" disabled selected>Select type</option>
+      <option value="fourWheeler">Four Wheeler (Car)</option>
+      <option value="twoWheeler">Two Wheeler (Bike/Scooter)</option>
+    </select>
+
+    <label for="fuel">Fuel Type:</label>
+    <select id="fuel" name="fuel" required>
+      <option value="" disabled selected>Select vehicle type first</option>
+    </select>
+
+    <label for="distance">Distance Travelled (in km):</label>
+    <input type="number" name="distance" id="distance" placeholder="e.g., 500" required>
+
+    <label for="mileage">Mileage (in km per litre):</label>
+    <input type="number" name="mileage" id="mileage" placeholder="e.g., 40" required>
+
+    <button type="submit">Calculate</button>
+  </form>
+
+  <script>
+    function updateFuelOptions() {
+      const vehicleType = document.getElementById('vehicleType').value;
+      const fuelSelect = document.getElementById('fuel');
+      fuelSelect.innerHTML = "";
+
+      if (vehicleType === "fourWheeler") {
+        fuelSelect.innerHTML = `
+          <option value="petrol">Petrol</option>
+          <option value="diesel">Diesel</option>
+          <option value="cng">CNG</option>
+          <option value="electric">Electric</option>
+        `;
+      } else if (vehicleType === "twoWheeler") {
+        fuelSelect.innerHTML = `
+          <option value="petrol">Petrol</option>
+          <option value="electric">Electric</option>
+        `;
+      }
+    }
+  </script>
+
+</body>
+</html>

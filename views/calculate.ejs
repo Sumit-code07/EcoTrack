@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="post" action="/calculate">
+        <input type="hidden" name="user_id" >
+        <label>Travel (km):</label><input name="travel_km" required><br>
+        <label>Mode:</label>
+        <select name="travel_mode">
+            <option value="car">Car</option>
+            <option value="bus">Bus</option>
+            <option value="train">Train</option>
+            <option value="bike">Bike</option>
+            <option value="walk">Walk</option>
+        </select><br>
+        <label>Electricity (kWh):</label><input name="electricity_kwh" required><br>
+        <label>Non-Veg Meals:</label><input name="meals_nonveg" required><br>
+        <label>Veg Meals:</label><input name="meals_veg" required><br>
+        <button type="submit">Calculate</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Meal Carbon Footprint Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+      max-width: 500px;
+      margin: 40px auto;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+    label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+    select, button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 1em;
+    }
+    button {
+      background-color: #0078d7;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #005fa3;
+    }
+  </style>
+</head>
+<body>
+  <h2>Meal Carbon Footprint Calculator</h2>
+
+  <form action="/meals/<%=id%>" method="POST">
+    <label for="dietType">Meal Type:</label>
+    <select id="dietType" name="dietType" onchange="updateFoodOptions()" required>
+      <option value="" disabled selected>Select</option>
+      <option value="veg">Vegetarian</option>
+      <option value="nonVeg">Non-Vegetarian</option>
+    </select>
+
+    <label for="foodType">Food Type:</label>
+    <select id="foodType" name="foodType" required>
+      <option value="" disabled selected>Select meal type first</option>
+    </select>
+
+    <label for="cooking">Cooking Method:</label>
+    <select id="cooking" name="cooking" required>
+      <option value="" disabled selected>Select</option>
+      <option value="raw">Raw</option>
+      <option value="boiled">Boiled</option>
+      <option value="fried">Fried</option>
+      <option value="grilled">Grilled</option>
+    </select>
+
+    <button type="submit">Calculate</button>
+  </form>
+
+  <script>
+    function updateFoodOptions() {
+      const diet = document.getElementById("dietType").value;
+      const food = document.getElementById("foodType");
+      food.innerHTML = "";
+      if (diet === "veg") {
+        food.innerHTML = `
+          <option value="vegetables">Vegetables</option>
+          <option value="fruits">Fruits</option>
+          <option value="grains">Grains</option>`;
+      } else {
+        food.innerHTML = `
+          <option value="chicken">Chicken</option>
+          <option value="beef">Beef</option>
+          <option value="fish">Fish</option>
+          <option value="pork">Pork</option>`;
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Electronics Carbon Footprint Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f8fb;
+      max-width: 500px;
+      margin: 40px auto;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+    label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+    select, input, button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 1em;
+    }
+    button {
+      background-color: #28a745;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #1f7f36;
+    }
+  </style>
+</head>
+<body>
+  <h2>Electronics Carbon Footprint Calculator</h2>
+
+  <form action="/electronics/<%=id%>" method="POST">
+    <label for="deviceType">Device Type:</label>
+    <select id="deviceType" name="deviceType" required>
+      <option value="" disabled selected>Select</option>
+      <option value="Laptop">Laptop</option>
+      <option value="Smartphone">Smartphone</option>
+      <option value="Television">Television</option>
+      <option value="Refrigerator">Refrigerator</option>
+      <option value="Fan">Fan</option>
+      <option value="AC">Air Conditioner</option>
+    </select>
+
+    <label for="powerRating">Power Rating (Watts):</label>
+    <input type="number" id="powerRating" name="powerRating" placeholder="e.g., 100" required>
+
+    <label for="usageHours">Usage Time (Hours):</label>
+    <input type="number" id="usageHours" name="usageHours" placeholder="e.g., 5" required>
+
+    <button type="submit">Calculate</button>
+  </form>
+</body>
+</html>

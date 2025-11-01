@@ -13,13 +13,14 @@
             <ul type="none">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">About Us</a></li>
-                <li><a href="#">leaderboard</a></li>
+                <li><a href="/leaderboard">leaderboard</a></li>
                 <li><a href="#">Contact Us</a></li>
                 <li><a href="#">AI Advice</a></li>
             </ul>
         </div>
-        <div class="profile"></div>
+        <img src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg" alt="" class="profile">
     </header>
+    <h1>Hello <%=user.name%></h1>
 
      <div class="table-container">
     <h2>CO₂ Emission Report</h2>
@@ -31,19 +32,22 @@
         </tr>
       </thead>
       <tbody>
-        <tr><td>25 Oct 2025</td><td>2.4</td></tr>
-        <tr><td>26 Oct 2025</td><td>3.1</td></tr>
+        <%for(data of datas){%>
+            <tr><td><%=data.date%></td><td><%=data.totalCO2%></td></tr>
+        <%}%>
+        
+        <!-- <tr><td>26 Oct 2025</td><td>3.1</td></tr>
         <tr><td>27 Oct 2025</td><td>1.8</td></tr>
         <tr><td>28 Oct 2025</td><td>2.7</td></tr>
         <tr><td>29 Oct 2025</td><td>2.9</td></tr>
         <tr><td>30 Oct 2025</td><td>3.3</td></tr>
-        <tr><td>31 Oct 2025</td><td>2.2</td></tr>
+        <tr><td>31 Oct 2025</td><td>2.2</td></tr> -->
       </tbody>
       
     </table>
   </div>
   <div>
-        <button class="btn-co2">Calculate CO₂ Emission</button>
+        <a href="/vehicles/<%=user.id%>">Calculate CO₂ Emission<a>
       </div>
 </body>
 </html>
