@@ -20,9 +20,9 @@ const connection = mysql.createConnection({
 app.listen(port,()=>{
     console.log(`app is listening port ${port}`);
 })
-app.get("/",(req,res)=>{
-    res.render("home.ejs");
-})
+// app.get("/",(req,res)=>{
+//     res.render("home.ejs");
+// })
 app.get("/login",(req,res)=>{
     res.render("login.ejs");
 })
@@ -63,7 +63,6 @@ app.post("/register",(req,res)=>{
             connection.query(q2,[id,0,0,0,0,0,0],(err,result)=>{
                 res.redirect("/login");
             })
-            
         })
     }catch(err){
         console.log(err);
@@ -217,7 +216,6 @@ app.post("/waste/:id", (req, res) => {
 
   const totalCO = emissionFactor * amount;
   footprintData.waste=totalCO.toFixed(2);
-  console.log(footprintData);
   const totalCO2 = 
   parseFloat(footprintData.electronics || 0) +
   parseFloat(footprintData.vehicles || 0) +
@@ -234,5 +232,8 @@ app.post("/waste/:id", (req, res) => {
 app.get("/waste/:id",(req,res)=>{
     let {id}=req.params;
     res.render("waste.ejs",{id});
+})
+app.get("/",(req,res)=>{
+    res.render("newhome.ejs");
 })
 

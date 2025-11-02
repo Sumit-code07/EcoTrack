@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoTrack - Track Your Carbon Footprint</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: #f4fff4;
+      color: #222;
+      overflow-x: hidden;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 8%;
+      background: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    header h2 {
+      color: #2e7d32;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    header ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    header ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    header ul li a:hover {
+      color: #2e7d32;
+    }
+
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 60px 8%;
+      flex-wrap: wrap;
+    }
+
+    .hero-text {
+      flex: 1;
+      min-width: 320px;
+    }
+
+    .hero-text h1 {
+      font-size: 3rem;
+      color: #2e7d32;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .hero-text p {
+      font-size: 1.1rem;
+      color: #555;
+      margin-bottom: 30px;
+      max-width: 500px;
+    }
+
+    .hero-text a {
+      background: #2e7d32;
+      color: white;
+      text-decoration: none;
+      padding: 12px 25px;
+      border-radius: 8px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .hero-text a:hover {
+      background: #1b5e20;
+    }
+
+    .hero-img {
+      flex: 1;
+      text-align: center;
+    }
+
+    .hero-img img {
+      width: 85%;
+      max-width: 500px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+
+    .features {
+      padding: 80px 8%;
+      background: white;
+      text-align: center;
+    }
+
+    .features h2 {
+      color: #2e7d32;
+      font-size: 2.2rem;
+      margin-bottom: 40px;
+    }
+
+    .feature-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .card {
+      background: #f9fff9;
+      border: 1px solid #d9f9d9;
+      padding: 30px 25px;
+      width: 300px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card i {
+      font-size: 2.5rem;
+      color: #2e7d32;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #2e7d32;
+      color: white;
+      margin-top: 60px;
+    }
+
+    footer a {
+      color: #a5f3a1;
+      text-decoration: none;
+    }
+
+    @media(max-width:768px){
+      .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+      }
+      .hero-text h1 {
+        font-size: 2.4rem;
+      }
+      .hero-img img {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h2>EcoTrack</h2>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/leaderboard">Leaderboard</a></li>
+      <li><a href="/login">Login</a></li>
+      <li><a href="/signUp">Sign Up</a></li>
+    </ul>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Track. Reduce. Sustain.</h1>
+      <p>EcoTrack helps you calculate and monitor your daily carbon footprint, inspiring you to make eco-friendly choices and live a greener life 🌿.</p>
+      <a href="/signUp">Get Started</a>
+    </div>
+    <div class="hero-img">
+      <img src="https://media.istockphoto.com/id/1353967009/photo/sustainable-development-and-green-business-based-on-renewable-energy-reduce-co2-emission.jpg?s=612x612&w=0&k=20&c=-uOboxq_hAl7fFPTtYe3XSnExeeUVMVrpp0kKYNoTvI=" alt="eco illustration">
+    </div>
+  </section>
+
+  <section class="features">
+    <h2>Why Choose EcoTrack?</h2>
+    <div class="feature-grid">
+      <div class="card">
+        <i class="ri-leaf-line"></i>
+        <h3>Calculate Your Impact</h3>
+        <p>Get real-time estimates of your CO₂ emissions based on your lifestyle choices.</p>
+      </div>
+      <div class="card">
+        <i class="ri-bar-chart-line"></i>
+        <h3>Visual Insights</h3>
+        <p>Track your footprint with beautiful graphs and actionable analytics.</p>
+      </div>
+      <div class="card">
+        <i class="ri-community-line"></i>
+        <h3>Compete & Grow</h3>
+        <p>Compare your sustainability score on our global leaderboard and aim higher!</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 EcoTrack | Made with ❤️ for a Greener Tomorrow</p>
+  </footer>
+
+</body>
+</html>
